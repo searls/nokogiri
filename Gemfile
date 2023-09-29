@@ -25,6 +25,7 @@ group :development do
   gem "ruby_memcheck", "2.2.0"
   gem "rubyzip", "~> 2.3.2"
   gem "simplecov", "= 0.21.2"
+  gem "tldr"
 
   # rubocop
   if Gem::Requirement.new("~> 3.0").satisfied_by?(Gem::Version.new(RUBY_VERSION))

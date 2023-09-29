@@ -130,7 +130,7 @@ module Nokogiri
   end
 
   # rubocop:disable Style/ClassVars
-  class TestCase < Minitest::Spec
+  class TestCase < TLDR #Minitest::Spec
     include TestBase
 
     COMPACT_EVERY = 20
@@ -462,3 +462,12 @@ module Nokogiri
 end
 
 Minitest::Spec.register_spec_type(//, Nokogiri::TestCase) # make TestCase the default
+
+Kernel.undef_method :describe
+module NotASpec
+  [:describe, :it, :let].each do |m|
+    define_method m do |*args|
+    end
+  end
+end
+include NotASpec

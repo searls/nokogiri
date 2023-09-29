@@ -105,6 +105,8 @@ Rake::TestTask.new do |t|
   nokogiri_test_case_configuration(t)
 end
 
+require "tldr/rake"
+
 namespace "test" do
   Rake::TestTask.new("bench") do |t|
     nokogiri_test_bench_configuration(t)
